@@ -6,99 +6,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Poppins;
-            background-color: white;
-            line-height: 35px;
-        }
-
-        banner img {
-            float: left;
-            margin-right:35px;
-        }
-        
-        
-         p {
-            font-size: large;
-         }
-
-        adv {
-            text-align: left;
-            margin-top: 20px
-        }
-
-        goals {
-            text-align: left;
-            margin-top: 20px;
-            font-family: Poppins;
-        }
-
-        header {
-            font-size: larger;
-            color: #ff86c8;
-        }
-
-
-        ul {
-            font-size: large;
-        }
-
-        iframe {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        img {
-            width: 25px;
-            height: 25px;
-            transition-property: transform;
-            transition-duration: 3s;
-            transition-timing-function: ease-in-out;
-        }
-
-        img:hover{
-            transform: scale(5, 5);
-        }
-
-    </style>
 </head>
-<body>
-    <banner>
-        <img src="cs3imgs/mas.png">
-    </banner>
-    <header>
-       <h1 style="font-family: Bebas Neue">Break Free</h1>
-     </header>
-    
-    <adv>
-        <h1 style="font-family: Bebas Neue"><b>What We Advocate For:</b></h1>
-        <p>At Break Free, our advocacies center on empowering women and promoting gender equality. We focus on education and awareness, providing resources to help individuals understand women's rights and the challenges they face. We actively support organizations dedicated to women's advocacy and encourage engagement with government policies that promote equality. Our mission emphasizes the importance of empowerment and leadership opportunities for women, while also addressing intersectionality to honor diverse experiences. We raise awareness about mental health, advocate for the end of gender-based violence, and promote economic equality by striving to close the gender pay gap. We believe in building a supportive community and engaging men as allies in the fight for gender equality. Together, we can create meaningful change.</p>
-    </adv>
-    <goals>
-        <h1 style="font-family: Bebas Neue"><b>Our Goals:</b></h1>
-        <ul>
-            <li>We aim to raise awareness women's rights issues and the importance of gender equality through educational content and resources.</li>
-            <li>We want to provide tools and support that empower women to take charge of their lives, pursue leadership roles, and advocate for themselves and others.</li>
-            <li>And we collaborate with and promote organizations that focus on women's rights, providing them with visibility and resources to amplify their impact.</li>
-        </ul>
-    </goals>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/vz7IUDOYvXk?si=41iT_kuIHXFBr6Qp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
-    <img src="imgs/download.png"></image>
-
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
         
+body {
+  font-family: Poppins;
+  background-color: white;
+  line-height: 35px;
+}
+        
+p {
+  font-size: large;
+}
+
+adv {
+  margin-top: 20px
+}
+
+goals {
+  margin-top: 20px;
+  font-family: Poppins;
+}
+
+header {
+  font-size: larger;
+  color: #ff86c8;
+}
+
+ul {
+  font-size: large;
+}
+
+iframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex; /* Use Flexbox to create a 2-column layout */
+  justify-content: space-between; /* Space between the columns */
+  gap: 20px; /* Gap between the columns */
+}
+
+/* Main Content Styling */
+.main-content {
+  flex: 3; /* Make the main content take up 3 parts */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 70%; /* Adjust the width of the main content */
+}
+.sidebar {
+  flex: 1; /* Sidebar takes up 1 part */
+  background-color: #fadfed;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 25%; /* Adjust the width of the sidebar */
+}
 
 
-    
+</style>
+<body>
+    <div class="container">
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1 style="font-family: Bebas Neue">Break Free</h1>
+        </header>
+        <adv>
+            <h1 style="font-family: Bebas Neue"><b>What We Advocate For:</b></h1>
+            <p>At Break Free, our advocacies center on empowering women and promoting gender equality. We focus on education and awareness, providing resources to help individuals understand women's rights and the challenges they face. We actively support organizations dedicated to women's advocacy and encourage engagement with government policies that promote equality. Our mission emphasizes the importance of empowerment and leadership opportunities for women, while also addressing intersectionality to honor diverse experiences. We raise awareness about mental health, advocate for the end of gender-based violence, and promote economic equality by striving to close the gender pay gap. We believe in building a supportive community and engaging men as allies in the fight for gender equality. Together, we can create meaningful change.</p>
+        </adv>
+        <goals>
+            <h1 style="font-family: Bebas Neue"><b>Our Goals:</b></h1>
+            <ul>
+                <li>We aim to raise awareness women's rights issues and the importance of gender equality through educational content and resources.</li>
+                <li>We want to provide tools and support that empower women to take charge of their lives, pursue leadership roles, and advocate for themselves and others.</li>
+                <li>And we collaborate with and promote organizations that focus on women's rights, providing them with visibility and resources to amplify their impact.</li>
+            </ul>
+        </goals>
+    </div>
+    <div class="sidebar">
+        <img src="img/mau.png" height=315 width=100% border-radius: 5px>
+        <iframe width=100% height="315" border-radius: 5px src="https://www.youtube.com/embed/vz7IUDOYvXk?si=41iT_kuIHXFBr6Qp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+    </div>
 </body>
+   
 </html>
-
 
 
