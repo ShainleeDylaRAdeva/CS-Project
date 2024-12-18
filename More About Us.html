@@ -13,7 +13,43 @@
   padding: 0;
   box-sizing: border-box;
 }
-        
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    align: left;
+}
+
+li {
+    float: left;
+    border-right: 2px solid #ff59b1;
+    font-family: Poppins;
+    width: 1,366px;
+
+}
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ffc4e4;
+    color: #ff59b1;
+}
+nav{
+    background-color: white;
+}
+    
 body {
   font-family: Poppins;
   background-color: white;
@@ -49,34 +85,41 @@ iframe {
 }
 
 .container {
-  display: flex; /* Use Flexbox to create a 2-column layout */
-  justify-content: space-between; /* Space between the columns */
-  gap: 20px; /* Gap between the columns */
+  display: flex; 
+  justify-content: space-between; 
+  gap: 20px; 
+  margin-top: 55px;
 }
 
-/* Main Content Styling */
 .main-content {
-  flex: 3; /* Make the main content take up 3 parts */
+  flex: 3;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 70%; /* Adjust the width of the main content */
+  width: 70%; 
 }
 .sidebar {
-  flex: 1; /* Sidebar takes up 1 part */
+  flex: 1; 
   background-color: #fadfed;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 25%; /* Adjust the width of the sidebar */
+  width: 25%;
 }
 
 
 </style>
 <body>
+    <nav>
+        <ul>
+            <li><a href="file:///Users/macbook/Downloads/PSHS%20G9/COM%20SCI/index.html">Home</a></li>
+            <li><a href="file:///Users/macbook/Downloads/PSHS%20G9/COM%20SCI/More%20About%20Us.html">More About Us</a></li>
+            <li><a href="#">Our Impact</a></li>
+            <li><a href="#">Taking Action</a></li>
+        </ul>
+    </nav>
     <div class="container">
-    <!-- Main Content -->
     <div class="main-content">
         <header>
             <h1 style="font-family: Bebas Neue">Break Free</h1>
@@ -101,5 +144,3 @@ iframe {
 </body>
    
 </html>
-
-
