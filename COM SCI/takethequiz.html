@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Break Free: Interactive Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffe0f0, #fadfed);
+        }
+        nav {
+            background-color: white;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+        nav ul li a:hover {
+            border-bottom: 2px solid #ff59b1;
+            color: #ff59b1;
+        }
+        .quiz-container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .options button:hover {
+            background: #ff59b1;
+            color: white;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #FF5733 !important;
+            color: white;
+        }
+        #nextBtn, #prevBtn {
+            margin-top: 15px;
+            padding: 10px;
+            background: #fa57b0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d63384;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="file:///Users/macbook/Downloads/PSHS%20G9/COM%20SCI/index.html">Home</a></li>
+            <li><a href="file:///Users/macbook/Downloads/PSHS%20G9/COM%20SCI/More%20About%20Us.html">More About Us</a></li>
+            <li><a href="file:///Users/macbook/Downloads/PSHS%20G9/COM%20SCI/our%20impact.html">Our Impact</a></li>
+            <li><a href="#">Taking Action</a></li>
+            <li><a href="file:///Users/macbook/Downloads/PSHS%20G9/COM%20SCI/takethequiz.html">Take the Quiz</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Break Free: Take the Quiz</h1>
+    <div class="quiz-container">
+        <div id="timer">Time Left: 30s</div>
+        <div id="question-container" class="question"></div>
+        <div class="options" id="options-container"></div>
+        <p id="answer-feedback"></p>
+        <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+        <button id="nextBtn" onclick="nextQuestion()">Next</button>
+        <p id="score-container"></p>
+    </div>
+    <div id="final-feedback" class="quiz-container" style="display: none;"></div>
+
+    <script>
+        const quizData = [
+            { question: "What is gender equality?", options: ["Men and women being identical", "Equal opportunities for all genders", "Women being superior", "Ignoring gender differences"], correct: 1 },
+            { question: "Which of these is an example of gender discrimination?", options: ["Equal pay for the same job", "A company promoting diversity", "Hiring based on gender bias", "Providing parental leave for both parents"], correct: 2 },
+            { question: "Why is gender equality important?", options: ["It only benefits women", "It leads to economic growth", "It has no real impact", "It limits opportunities"], correct: 1 },
+            { question: "What is the gender pay gap?", options: ["The difference in earnings between men and women", "A myth", "A law ensuring equal pay", "The number of women in leadership"], correct: 0 },
+            { question: "How can individuals promote gender equality?", options: ["Stay silent about discrimination", "Challenge stereotypes and support inclusivity", "Only support their own gender", "Ignore policies promoting equality"], correct: 1 }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timer;
+        let timeLeft = 30;
+
+        function startTimer() {
+            clearInterval(timer);
+            timeLeft = 30;
+            document.getElementById("timer").innerText = `Time Left: ${timeLeft}s`;
+            timer = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    document.getElementById("timer").innerText = `Time Left: ${timeLeft}s`;
+                } else {
+                    clearInterval(timer);
+                    nextQuestion();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= quizData.length) {
+                displayFinalFeedback();
+                return;
+            }
+            startTimer();
+            document.getElementById("answer-feedback").innerText = "";
+            document.getElementById("nextBtn").style.display = "none";
+            const questionContainer = document.getElementById("question-container");
+            const optionsContainer = document.getElementById("options-container");
+            questionContainer.innerText = quizData[currentQuestionIndex].question;
+            optionsContainer.innerHTML = "";
+            
+            quizData[currentQuestionIndex].options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.innerText = option;
+                button.onclick = () => checkAnswer(index, button);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function checkAnswer(index, button) {
+            clearInterval(timer);
+            const correctIndex = quizData[currentQuestionIndex].correct;
+            if (index === correctIndex) {
+                button.classList.add("correct");
+                score++;
+            } else {
+                button.classList.add("incorrect");
+                document.querySelectorAll(".options button")[correctIndex].classList.add("correct");
+            }
+            document.querySelectorAll(".options button").forEach(btn => btn.disabled = true);
+            document.getElementById("nextBtn").style.display = "inline-block";
+        }
+
+        function displayFinalFeedback() {
+            document.querySelector(".quiz-container").style.display = "none";
+            let feedbackText = score <= 2 ? "You can do better, dig deeper about gender equality through our website." :
+                               score <= 4 ? "Oohh! Good Job!" : "Well done, you did excellent!";
+            document.getElementById("final-feedback").innerText = `Your Score: ${score} / ${quizData.length}\n${feedbackText}`;
+            document.getElementById("final-feedback").style.display = "block";
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
