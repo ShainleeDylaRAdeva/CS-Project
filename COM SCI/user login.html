@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Break Free: Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="logstyle.css" />
+</head>
+<body>
+  <div class="bg-image"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="More About Us.html">More About Us</a></li>
+      <li><a href="our impact.html">Our Impact</a></li>
+      <li><a href="takethequiz.html">Take the Quiz</a></li>
+      <li><a href="user login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="loginEmail">Email Address *</label>
+          <input type="email" id="loginEmail" name="loginEmail" required />
+          <span class="error-msg" id="emailError">Invalid email or password.</span>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password *</label>
+          <input type="password" id="loginPassword" name="loginPassword" required />
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+      <p>Don't have an account? <a href="sign up.html">Sign up here</a>.</p>
+    </section>
+  </main>
+
+  <script src="logscript.js"></script>
+</body>
+</html>

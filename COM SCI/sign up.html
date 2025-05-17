@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Break Free: Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="sgupstyle.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="More About Us.html">More About Us</a></li>
+      <li><a href="our impact.html">Our Impact</a></li>
+      <li><a href="takethequiz.html">Take the Quiz</a></li>
+      <li><a href="user login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1 class="site-logo">Break Free</h1>
+    <p class="tagline">Empowering Gender Equality & Breaking Stereotypes</p>
+  </header>
+
+  <main>
+    <section class="signup-container">
+      <h2>Join Our Campaign</h2>
+      <p class="description">Sign up to support gender equality and help break stereotypes.</p>
+
+      <form id="signupForm" novalidate>
+        <div class="form-group">
+          <label for="firstName">First Name * <span class="required-msg" id="firstNameReq">required</span></label>
+          <input type="text" id="firstName" name="firstName" />
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name * <span class="required-msg" id="lastNameReq">required</span></label>
+          <input type="text" id="lastName" name="lastName" />
+        </div>
+
+        <div class="form-group">
+          <label>Sex * <span class="required-msg" id="sexReq">required</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="sex" value="Male" /> Male</label>
+            <label><input type="radio" name="sex" value="Female" /> Female</label>
+            <label><input type="radio" name="sex" value="Prefer not to say" /> Prefer not to say</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address * <span class="required-msg" id="emailReq">required</span></label>
+          <input type="email" id="email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password * <span class="required-msg" id="passwordReq">required</span></label>
+          <input type="password" id="password" name="password" />
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact Number (optional)</label>
+          <input type="text" id="contact" name="contact" />
+        </div>
+
+        <div class="form-group">
+          <label for="supportReason">Why are you supporting our campaign? * <span class="required-msg" id="supportReq">required</span></label>
+          <textarea id="supportReason" name="supportReason" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn-signup">Sign Up</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="sgupscript.js"></script>
+</body>
+</html>

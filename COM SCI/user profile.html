@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Break Free: Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="More About Us.html">More About Us</a></li>
+      <li><a href="our impact.html">Our Impact</a></li>
+      <li><a href="takethequiz.html">Take the Quiz</a></li>
+      <li><a href="user login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1 class="site-logo">Break Free</h1>
+    <p class="tagline">Thank you for joining us!</p>
+  </header>
+
+  <main class="profile-container">
+    <h2>Your Profile</h2>
+    <div>
+      <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+      <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+      <p><strong>Email Address:</strong> <span id="displayEmail"></span></p>
+      <p><strong>Sex:</strong> <span id="displaySex"></span></p>
+      <p><strong>Why I support this campaign:</strong></p>
+      <p id="displaySupportReason"></p>
+    </div>
+  </main>
+
+  <script>
+    window.onload = () => {
+      const currentUserEmail = localStorage.getItem('currentUser');
+
+      if (!currentUserEmail) {
+        alert('No user logged in. Redirecting to login page.');
+        window.location.href = 'login.html';
+        return;
+      }
+
+      const userDataJSON = localStorage.getItem(`user_${currentUserEmail}`);
+
+      if (!userDataJSON) {
+        alert('User data not found. Redirecting to signup page.');
+        window.location.href = 'proj_signup_lastname.html';
+        return;
+      }
+
+      const userData = JSON.parse(userDataJSON);
+
+      document.getElementById('displayFirstName').innerText = userData.firstName || '';
+      document.getElementById('displayLastName').innerText = userData.lastName || '';
+      document.getElementById('displayEmail').innerText = userData.email || '';
+      document.getElementById('displaySex').innerText = userData.sex || '';
+      document.getElementById('displaySupportReason').innerText = userData.supportReason || '';
+    }
+  </script>
+</body>
+</html>

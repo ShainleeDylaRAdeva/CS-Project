@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #ffe0f0, #fadfed);
+  color: #333;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: white;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom: 2px solid #ff59b1;
+  color: #ff59b1;
+}
+
+.hero {
+  text-align: center;
+  margin: 30px 20px 40px 20px;
+}
+
+.site-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3.5rem;
+  color: #ff59b1;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #784560;
+}
+
+.signup-container {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 60px auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 89, 177, 0.3);
+}
+
+.signup-container h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ff59b1;
+}
+
+.signup-container p.description {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #784560;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 2px solid #ff59b1;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #784560;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  font-weight: 400;
+  color: #333;
+}
+
+.radio-group label {
+  font-weight: 400;
+}
+
+button.btn-signup {
+  background-color: #ff59b1;
+  color: white;
+  font-weight: 700;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-signup:hover {
+  background-color: #d43f84;
+}
+
+.required-msg {
+  color: #ff4a91;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 6px;
+  display: none; 
+}
+
+
+.profile-container {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 89, 177, 0.3);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.profile-container h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #ff59b1;
+}
+
+.profile-container p {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #784560;
+}
